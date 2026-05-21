@@ -285,6 +285,28 @@ Wireshark packet analysis provided visibility into TCP flags, sequence numbers, 
 
 <hr>
 
+<h2>🚀 Future Improvements</h2>
+
+<ul>
+
+<li>Integration with Splunk SIEM for centralized log analysis</li>
+
+<li>Real-time alert generation using Suricata IDS</li>
+
+<li>Automated detection scripts using Python</li>
+
+<li>Implementation of Sigma detection rules</li>
+
+<li>Creation of SOC monitoring dashboards</li>
+
+<li>Integration with MITRE ATT&CK Navigator</li>
+
+<li>Detection automation using PowerShell and scripting</li>
+
+</ul>
+
+<hr>
+
 <h2>🖥️ Lab Environment</h2>
 
 <table>
@@ -312,9 +334,49 @@ The complete detailed report is included in this repository.
 
 <hr>
 
+<hr>
+
+<h2>👨‍💻 Author</h2>
+
+<p>
+<b>Dibyansu Behera</b>
+</p>
+
+<p>
+CSE Student • SOC Analyst Track • Blue Team Enthusiast
+</p>
+
+<ul>
+
+<li>Wireshark</li>
+
+<li>Splunk</li>
+
+<li>Threat Hunting</li>
+
+<li>Network Traffic Analysis</li>
+
+<li>Active Directory</li>
+
+<li>Detection Engineering</li>
+
+<li>Python Scripting</li>
+
+</ul>
+
 <h2>⚠️ Disclaimer</h2>
 
 <p>
 This project was performed inside an isolated virtual lab environment
 for educational and defensive cybersecurity purposes only.
+</p>
+
+<hr>
+
+<p align="center">
+⭐ If you found this project useful, consider giving it a star.
+</p>
+
+<p align="center">
+Built for learning, detection engineering, and SOC analyst development.
 </p>
