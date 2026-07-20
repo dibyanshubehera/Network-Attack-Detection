@@ -1,382 +1,647 @@
-<h1 align="center">SOC-Based Network Attack Detection & Traffic Analysis</h1>
+<div align="center">
 
-<p align="center">
+# 🌐 SOC-Based Network Attack Detection & Traffic Analysis
 
-<img src="https://img.shields.io/badge/Wireshark-Network%20Analysis-blue?style=for-the-badge&logo=wireshark">
+### Wireshark • Nmap • Hydra • VMware • MITRE ATT&CK
 
-<img src="https://img.shields.io/badge/Nmap-Reconnaissance-darkgreen?style=for-the-badge">
+![Wireshark](https://img.shields.io/badge/Wireshark-Network%20Analysis-1679A7?style=for-the-badge&logo=wireshark)
+![Nmap](https://img.shields.io/badge/Nmap-Reconnaissance-00457C?style=for-the-badge)
+![Hydra](https://img.shields.io/badge/Hydra-Brute%20Force-C62828?style=for-the-badge)
+![MITRE](https://img.shields.io/badge/MITRE-ATT%26CK-FF9800?style=for-the-badge)
+![SOC](https://img.shields.io/badge/SOC-Investigation-2E7D32?style=for-the-badge)
 
-<img src="https://img.shields.io/badge/Hydra-Brute%20Force-red?style=for-the-badge">
+**A hands-on Blue Team investigation demonstrating reconnaissance detection, port scanning analysis, brute-force attack simulation, and packet-level traffic analysis in an isolated VMware lab.**
 
-<img src="https://img.shields.io/badge/SOC-Detection%20Lab-black?style=for-the-badge">
+</div>
 
-<img src="https://img.shields.io/badge/MITRE-ATT%26CK-orange?style=for-the-badge">
+---
 
-</p>
+# 📖 Project Overview
 
-<p align="center">
-  <b>Cybersecurity Project</b> • Wireshark • Nmap • Hydra • SOC Analysis
-</p>
+## Objective
 
-<hr>
+The purpose of this project was to simulate common network attacks inside an isolated VMware lab and investigate the generated traffic from a Security Operations Center (SOC) perspective.
 
-<h2>📌 Project Overview</h2>
+The project focuses on identifying attacker behavior through packet analysis, recognizing indicators of compromise (IOCs), and understanding how reconnaissance and brute-force attacks appear on the network.
 
-<p>
-This project demonstrates a SOC-style network attack detection lab using Kali Linux,
-Windows 10, Wireshark, Nmap, Hydra, and VMware.
-</p>
+---
 
-<p>
-The objective of this project was to simulate real-world attacker behavior and analyze
-network traffic generated during different phases of a cyber attack.
-</p>
+## Attack Scenarios
 
-<p>The project includes:</p>
+The following attack techniques were simulated during this investigation:
 
-<ul>
-  <li>ICMP reconnaissance detection</li>
-  <li>TCP SYN scan analysis</li>
-  <li>Service enumeration detection</li>
-  <li>RDP brute force attack simulation</li>
-  <li>Packet-level traffic investigation</li>
-  <li>SOC investigation workflow</li>
-  <li>MITRE ATT&CK mapping</li>
-</ul>
+- 🔍 ICMP Host Discovery
+- 🌐 TCP SYN Port Scanning
+- 📡 Service Enumeration
+- 🔐 RDP Brute Force Attack
+- 📊 Network Traffic Capture
+- 🛡️ SOC Investigation & Analysis
 
-<hr>
+---
 
-<h2>🛠️ Tools & Technologies</h2>
+## Skills Demonstrated
 
-<table>
-  <tr>
-    <th>Tool</th>
-    <th>Purpose</th>
-  </tr>
-  <tr>
-    <td>Wireshark</td>
-    <td>Packet analysis</td>
-  </tr>
-  <tr>
-    <td>Kali Linux</td>
-    <td>Attacker machine</td>
-  </tr>
-  <tr>
-    <td>Windows 10</td>
-    <td>Victim machine</td>
-  </tr>
-  <tr>
-    <td>Nmap</td>
-    <td>Reconnaissance and enumeration</td>
-  </tr>
-  <tr>
-    <td>Hydra</td>
-    <td>RDP brute force simulation</td>
-  </tr>
-  <tr>
-    <td>VMware Workstation</td>
-    <td>Virtual lab environment</td>
-  </tr>
-</table>
+- Network Traffic Analysis
+- Packet Inspection
+- Threat Hunting
+- SOC Investigation Workflow
+- MITRE ATT&CK Mapping
+- Attack Chain Analysis
+- Detection Engineering Fundamentals
 
-<hr>
+---
 
-<hr>
+# 🖥️ Lab Environment
 
-<h2>🧭 Attack Workflow</h2>
+This investigation was conducted inside an isolated VMware Workstation lab to safely simulate attacker activity and analyze network traffic without affecting production systems.
 
-<p>
-This project simulated a complete attacker reconnaissance and intrusion workflow
-inside an isolated VMware lab environment.
-</p>
+---
 
-<pre>
-Attacker Reconnaissance
-        ↓
-ICMP Host Discovery
-        ↓
-TCP SYN Port Scanning
-        ↓
-Service Enumeration
-        ↓
-RDP Target Identification
-        ↓
-Hydra Brute Force Attack
-        ↓
-Traffic Capture in Wireshark
-        ↓
-SOC Investigation & Analysis
-</pre>
+## 🏗️ Lab Topology
 
-<h2>⚔️ Attack Scenarios Simulated</h2>
+```text
+                    VMware Workstation
+┌──────────────────────────────────────────────────────┐
 
-<hr>
+        Kali Linux (Attacker)
+        IP: 192.168.74.xxx
+               │
+               │
+      ICMP • Nmap • Hydra
+               │
+               ▼
+        Windows 10 (Victim)
+        IP: 192.168.74.xxx
+               │
+               │
+      Network Traffic
+               │
+               ▼
+          Wireshark Capture
+               │
+               ▼
+      SOC Investigation & Analysis
 
-<h2>🎯 MITRE ATT&CK Mapping</h2>
+└──────────────────────────────────────────────────────┘
+```
 
-<table>
-<tr>
-<th>Attack Activity</th>
-<th>MITRE Technique</th>
-<th>Technique ID</th>
-</tr>
+---
 
-<tr>
-<td>ICMP Reconnaissance</td>
-<td>Network Service Discovery</td>
-<td>T1046</td>
-</tr>
+## 💻 Machines Used
 
-<tr>
-<td>TCP SYN Scan</td>
-<td>Network Service Discovery</td>
-<td>T1046</td>
-</tr>
+| Machine | Purpose |
+|---------|---------|
+| Kali Linux | Attacker Machine |
+| Windows 10 | Victim Machine |
+| VMware Workstation | Virtual Lab Environment |
+| Wireshark | Network Packet Capture & Analysis |
 
-<tr>
-<td>Service Enumeration</td>
-<td>Active Scanning</td>
-<td>T1595</td>
-</tr>
+---
 
-<tr>
-<td>RDP Brute Force Attack</td>
-<td>Password Guessing</td>
-<td>T1110.001</td>
-</tr>
+# 🛠️ Tools & Technologies
 
-</table>
+| Tool | Role in Investigation |
+|------|------------------------|
+| 🦈 Wireshark | Captured and analyzed network packets generated during the simulated attacks |
+| 🐉 Kali Linux | Attacker machine used to perform reconnaissance and brute-force attacks |
+| 🪟 Windows 10 | Victim machine targeted during the attack simulation |
+| 🌐 Nmap | Performed host discovery, port scanning, and service enumeration |
+| 🔓 Hydra | Simulated an RDP brute-force attack against the target |
+| 💻 VMware Workstation | Hosted the isolated virtual lab environment |
 
-<h3>1. ICMP Reconnaissance</h3>
+---
 
-<ul>
-  <li>Host discovery using ICMP Echo Requests</li>
-  <li>Detection of ICMP traffic in Wireshark</li>
-</ul>
+## 🔧 Core Technologies
 
-<h3>2. TCP SYN Scan</h3>
+- TCP/IP Networking
+- ICMP Protocol
+- TCP SYN Scanning
+- Remote Desktop Protocol (RDP)
+- Packet Capture (PCAP)
+- Network Traffic Analysis
+- Threat Hunting
+- SOC Investigation Workflow
+- MITRE ATT&CK Framework
 
-<ul>
-  <li>Nmap SYN scan against target machine</li>
-  <li>Detection of SYN packets and scanning behavior</li>
-</ul>
+---
 
-<h3>3. Service Enumeration</h3>
+# ⚔️ Attack Timeline
 
-<ul>
-  <li>Service version detection using Nmap</li>
-  <li>Analysis of exposed services</li>
-</ul>
+This investigation followed the complete attack lifecycle from reconnaissance to brute-force activity. Each phase generated unique network artifacts that were captured and analyzed using Wireshark.
 
-<h3>4. RDP Brute Force Attack</h3>
+```text
+┌──────────────────────────────┐
+│ 1️⃣ Host Discovery            │
+│ ICMP Echo Requests (Ping)     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 2️⃣ Port Scanning             │
+│ Nmap TCP SYN Scan             │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 3️⃣ Service Enumeration       │
+│ Version Detection             │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 4️⃣ RDP Discovery             │
+│ Target Service Identification │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 5️⃣ Brute Force Attack        │
+│ Hydra Authentication Attempts │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 6️⃣ Packet Capture            │
+│ Wireshark Analysis            │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ 7️⃣ SOC Investigation         │
+│ Detection & Findings          │
+└──────────────────────────────┘
+```
 
-<ul>
-  <li>Hydra password attack simulation</li>
-  <li>Detection of repeated authentication attempts</li>
-</ul>
+---
 
-<hr>
+## 🎯 Investigation Goals
 
-<hr>
+During each phase, the objective was to:
 
-<h2>💻 Commands Used During Attack Simulation</h2>
+- Identify attacker behavior.
+- Observe protocol-level communication.
+- Capture packet evidence.
+- Detect reconnaissance techniques.
+- Analyze authentication attempts.
+- Document indicators of compromise (IOCs).
+- Map attacker activity to the MITRE ATT&CK framework.
 
-<h3>ICMP Reconnaissance</h3>
+---
 
-<pre>
+# 🎯 MITRE ATT&CK Mapping
+
+The observed attacker activities were mapped to the MITRE ATT&CK framework to better understand the tactics and techniques used during the investigation.
+
+| Attack Activity | MITRE Technique | Technique ID | Detection Opportunity |
+|-----------------|-----------------|--------------|-----------------------|
+| ICMP Host Discovery | Network Service Discovery | T1046 | Monitor unusual ICMP traffic and host discovery patterns |
+| TCP SYN Port Scan | Network Service Discovery | T1046 | Detect multiple SYN packets targeting different ports |
+| Service Enumeration | Active Scanning | T1595 | Identify version detection and enumeration attempts |
+| RDP Brute Force Attack | Password Guessing | T1110.001 | Correlate repeated failed authentication attempts |
+
+---
+
+## 🛡️ SOC Detection Opportunities
+
+During the investigation, several opportunities for detection and monitoring were identified:
+
+- Detect abnormal ICMP Echo Request activity.
+- Monitor high-volume TCP SYN packets across multiple destination ports.
+- Identify service enumeration attempts using Nmap.
+- Correlate repeated RDP authentication failures with brute-force behavior.
+- Generate alerts for suspicious reconnaissance activity before successful compromise.
+
+---
+
+## 📌 Key Takeaway
+
+Mapping attacker behavior to the MITRE ATT&CK framework helps SOC analysts standardize detections, improve threat visibility, and develop more effective detection rules.
+
+---
+
+# 💻 Attack Execution Commands
+
+The following commands were executed within the isolated VMware lab to simulate attacker activity. Each command generated network traffic that was captured and analyzed during the investigation.
+
+---
+
+## 🔍 ICMP Host Discovery
+
+**Purpose:** Verify whether the target system is reachable on the network.
+
+```bash
 ping 192.168.74.130
-</pre>
+```
 
-<h3>TCP SYN Scan</h3>
+**Expected Evidence**
 
-<pre>
+- ICMP Echo Request packets
+- ICMP Echo Reply packets
+- Live host confirmation
+
+---
+
+## 🌐 TCP SYN Port Scan
+
+**Purpose:** Discover open TCP ports without establishing a full TCP connection.
+
+```bash
 nmap -sS 192.168.74.130
-</pre>
+```
 
-<h3>Service Enumeration</h3>
+**Expected Evidence**
 
-<pre>
+- Multiple TCP SYN packets
+- SYN/ACK responses from open ports
+- Port scanning behavior
+
+---
+
+## 📡 Service Enumeration
+
+**Purpose:** Identify services and versions running on discovered ports.
+
+```bash
 nmap -sV 192.168.74.130
-</pre>
+```
 
-<h3>Hydra RDP Brute Force</h3>
+**Expected Evidence**
 
-<pre>
+- Service banners
+- Version detection traffic
+- Enumeration activity
+
+---
+
+## 🔐 RDP Brute Force Simulation
+
+**Purpose:** Simulate repeated authentication attempts against the Remote Desktop service.
+
+```bash
 hydra -t 1 -V -f -l socuser -P passwords.txt rdp://192.168.74.130
-</pre>
+```
 
-<hr>
+**Expected Evidence**
 
-<h2>🔍 Wireshark Filters Used</h2>
+- Multiple authentication attempts
+- RDP communication
+- Brute-force attack pattern
+- Repeated failed logins
 
-<h3>ICMP Traffic</h3>
+---
 
-<pre>
-icmp
-</pre>
+## 🎯 Investigation Objective
 
-<h3>TCP SYN Scan Detection</h3>
+Each command was intentionally executed to generate identifiable network artifacts that could be captured, investigated, and correlated during a SOC investigation.
 
-<pre>
-tcp.flags.syn == 1 && tcp.flags.ack == 0
-</pre>
+---
 
-<h3>RDP Traffic</h3>
+# 🔍 Wireshark Detection Filters
 
-<pre>
-tcp.port == 3389
-</pre>
+During the investigation, Wireshark display filters were used to isolate suspicious traffic and analyze attacker behavior at the packet level.
 
-<h3>HTTP Traffic</h3>
+| Display Filter | Purpose | Detection Value |
+|---------------|---------|-----------------|
+| `icmp` | Display ICMP Echo Requests and Replies | Detect host discovery and reconnaissance activity |
+| `tcp.flags.syn == 1 && tcp.flags.ack == 0` | Display TCP SYN packets | Identify TCP SYN port scanning behavior |
+| `tcp.port == 3389` | Display Remote Desktop Protocol traffic | Investigate RDP communication and brute-force attempts |
+| `tcp.port == 445` | Display SMB traffic | Monitor SMB communication and lateral movement opportunities |
+| `http` | Display HTTP traffic | Analyze unencrypted web requests and responses |
 
-<pre>
-http
-</pre>
+---
 
-<h3>SMB Traffic</h3>
+## 🛡️ SOC Investigation Value
 
-<pre>
-tcp.port == 445
-</pre>
+These filters enabled rapid identification of suspicious traffic by reducing background noise and focusing on attacker-generated network activity.
 
-<hr>
+Using protocol-specific filters allows SOC analysts to:
 
-<h2>🛡️ SOC Investigation Findings</h2>
+- Detect reconnaissance activity.
+- Investigate port scanning behavior.
+- Identify authentication attempts.
+- Correlate attacker actions across multiple protocols.
+- Collect packet-level evidence for incident investigations.
 
-<ul>
+---
 
-<li>
-Repeated ICMP Echo Requests indicated reconnaissance and host discovery activity.
-</li>
+## 📌 Analyst Note
 
-<li>
-Multiple TCP SYN packets targeting different ports suggested active port scanning behavior.
-</li>
+Packet filtering is one of the most valuable skills in network security investigations. Efficient filtering reduces investigation time and helps analysts focus on indicators of compromise (IOCs) instead of manually reviewing thousands of packets.
 
-<li>
-Service enumeration traffic exposed SMB, RDP, RPC, and HTTP-related services running on the target machine.
-</li>
+---
 
-<li>
-Hydra-generated authentication traffic demonstrated repeated login attempts consistent with brute force attack patterns.
-</li>
+# 🛡️ SOC Investigation Findings
 
-<li>
-Packet inspection revealed attacker behavior, communication patterns, and reconnaissance methodology used during early intrusion stages.
-</li>
+The captured network traffic was analyzed from a Security Operations Center (SOC) perspective to identify attacker behavior, correlate network events, and determine potential detection opportunities.
 
-<li>
-Wireshark packet analysis provided visibility into TCP flags, sequence numbers, destination ports, and protocol-level behavior.
-</li>
+---
 
-</ul>
+## 🔎 Investigation Summary
 
-<h2>🧠 Skills Demonstrated</h2>
+### 1️⃣ Reconnaissance Activity Detected
 
-<ul>
-  <li>Network Traffic Analysis</li>
-  <li>Packet Inspection</li>
-  <li>Threat Hunting</li>
-  <li>Reconnaissance Detection</li>
-  <li>SOC Investigation Workflow</li>
-  <li>MITRE ATT&CK Mapping</li>
-  <li>Attack Chain Analysis</li>
-</ul>
+Repeated **ICMP Echo Requests** were observed from the attacker system, confirming host discovery activity prior to further attacks.
 
-<hr>
+**Evidence**
 
-<h2>🚀 Future Improvements</h2>
+- Multiple ICMP Echo Requests
+- Successful ICMP Echo Replies
+- Live host confirmation
 
-<ul>
+**Detection Opportunity**
 
-<li>Integration with Splunk SIEM for centralized log analysis</li>
+Monitor abnormal ICMP traffic between internal hosts to identify reconnaissance activity.
 
-<li>Real-time alert generation using Suricata IDS</li>
+---
 
-<li>Automated detection scripts using Python</li>
+### 2️⃣ TCP SYN Port Scanning Identified
 
-<li>Implementation of Sigma detection rules</li>
+Network traffic contained a high volume of **TCP SYN packets** targeting multiple destination ports.
 
-<li>Creation of SOC monitoring dashboards</li>
+This behavior is consistent with automated reconnaissance performed using **Nmap**.
 
-<li>Integration with MITRE ATT&CK Navigator</li>
+**Evidence**
 
-<li>Detection automation using PowerShell and scripting</li>
+- SYN packets sent to multiple ports
+- SYN/ACK responses from open services
+- Sequential scanning behavior
 
-</ul>
+**Detection Opportunity**
 
-<hr>
+Alert on excessive SYN packets targeting multiple ports within a short time period.
 
-<h2>🖥️ Lab Environment</h2>
+---
 
-<table>
-  <tr>
-    <th>Machine</th>
-    <th>Role</th>
-  </tr>
-  <tr>
-    <td>Kali Linux</td>
-    <td>Attacker</td>
-  </tr>
-  <tr>
-    <td>Windows 10</td>
-    <td>Victim</td>
-  </tr>
-</table>
+### 3️⃣ Service Enumeration Confirmed
 
-<hr>
+Version detection traffic revealed information about services exposed by the target system.
 
-<h2>📄 Project Report</h2>
+This information could be used by an attacker to identify vulnerable applications.
 
-<p>
-The complete detailed report is included in this repository.
-</p>
+**Evidence**
 
-<hr>
+- Service version detection
+- Application banner collection
+- Protocol fingerprinting
 
-<hr>
+**Detection Opportunity**
 
-<h2>👨‍💻 Author</h2>
+Monitor for aggressive service enumeration originating from internal or external hosts.
 
-<p>
-<b>Dibyansu Behera</b>
-</p>
+---
 
-<p>
-CSE Student • SOC Analyst Track • Blue Team Enthusiast
-</p>
+### 4️⃣ Brute Force Authentication Attempts
 
-<ul>
+Repeated authentication attempts against the RDP service were generated using **Hydra**.
 
-<li>Wireshark</li>
+The traffic pattern matched expected brute-force behavior.
 
-<li>Splunk</li>
+**Evidence**
 
-<li>Threat Hunting</li>
+- Multiple RDP connection attempts
+- Repeated authentication failures
+- Consistent attack timing
 
-<li>Network Traffic Analysis</li>
+**Detection Opportunity**
 
-<li>Active Directory</li>
+Correlate repeated failed authentication attempts and generate high-severity alerts.
 
-<li>Detection Engineering</li>
+---
 
-<li>Python Scripting</li>
+### 5️⃣ Packet-Level Evidence Collection
 
-</ul>
+Wireshark provided detailed visibility into every stage of the attack lifecycle.
 
-<h2>⚠️ Disclaimer</h2>
+Captured packets enabled reconstruction of attacker activity from reconnaissance through authentication attempts.
 
-<p>
-This project was performed inside an isolated virtual lab environment
-for educational and defensive cybersecurity purposes only.
-</p>
+**Evidence**
 
-<hr>
+- TCP Flags
+- Source & Destination IP Addresses
+- Port Numbers
+- Protocol Details
+- Packet Timing
 
-<p align="center">
-⭐ If you found this project useful, consider giving it a star.
-</p>
+---
 
-<p align="center">
-Built for learning, detection engineering, and SOC analyst development.
-</p>
+## 🎯 Key Takeaways
+
+- Reconnaissance activity was successfully detected.
+- Port scanning behavior was clearly identified.
+- Service enumeration exposed valuable system information.
+- Brute-force attempts produced recognizable authentication patterns.
+- Packet analysis enabled complete reconstruction of attacker activity.
+- MITRE ATT&CK mapping improved understanding of attacker techniques.
+- The investigation demonstrated how packet analysis supports SOC detection and incident response.
+
+---
+
+## 💡 SOC Analyst Insight
+
+This investigation demonstrates that early-stage attacker behavior—such as reconnaissance and scanning—often provides the best opportunity for detection before a successful compromise occurs.
+
+Building detections for these activities can significantly reduce attacker dwell time and improve an organization's defensive posture.
+
+---
+
+# 📸 Investigation Evidence
+
+The following screenshots will be added after completing the repository setup. These images provide visual evidence supporting the investigation findings.
+
+---
+
+## 🖥️ Lab Topology
+
+> *(Add VMware lab topology screenshot here)*
+
+```markdown
+![Lab Topology](screenshots/lab-topology.png)
+```
+
+---
+
+## 📡 ICMP Host Discovery
+
+> *(Add Wireshark ICMP capture here)*
+
+```markdown
+![ICMP Detection](screenshots/icmp-analysis.png)
+```
+
+---
+
+## 🌐 TCP SYN Port Scan
+
+> *(Add Wireshark TCP SYN scan capture here)*
+
+```markdown
+![TCP SYN Scan](screenshots/tcp-syn-scan.png)
+```
+
+---
+
+## 🔍 Service Enumeration
+
+> *(Add Nmap Service Enumeration screenshot here)*
+
+```markdown
+![Service Enumeration](screenshots/service-enumeration.png)
+```
+
+---
+
+## 🔐 Hydra Brute Force Attack
+
+> *(Add Hydra terminal screenshot here)*
+
+```markdown
+![Hydra Attack](screenshots/hydra-bruteforce.png)
+```
+
+---
+
+## 🦈 Wireshark Packet Analysis
+
+> *(Add packet inspection screenshot here)*
+
+```markdown
+![Packet Analysis](screenshots/packet-analysis.png)
+```
+
+---
+
+## 🎯 MITRE ATT&CK Mapping
+
+> *(Optional: Add MITRE ATT&CK mapping diagram here)*
+
+```markdown
+![MITRE Mapping](screenshots/mitre-mapping.png)
+```
+
+---
+
+# 🚀 Defensive Recommendations & Future Improvements
+
+The investigation highlighted several opportunities to improve detection capabilities and strengthen an organization's security posture.
+
+---
+
+## 🛡️ Defensive Recommendations
+
+### Network Monitoring
+
+- Continuously monitor ICMP traffic for reconnaissance activity.
+- Detect abnormal TCP SYN scans targeting multiple ports.
+- Alert on unexpected service enumeration from internal hosts.
+
+---
+
+### Authentication Security
+
+- Enable Account Lockout Policies to reduce brute-force attempts.
+- Implement Multi-Factor Authentication (MFA) for Remote Desktop access.
+- Monitor repeated failed logon attempts and investigate anomalies.
+
+---
+
+### Network Hardening
+
+- Restrict RDP access using firewall rules.
+- Disable unnecessary services exposed to the network.
+- Apply regular operating system and application security updates.
+
+---
+
+### Security Monitoring
+
+- Forward Windows Security Logs to a SIEM platform such as Splunk.
+- Develop detection rules for reconnaissance and brute-force activity.
+- Correlate network traffic with endpoint authentication events.
+
+---
+
+## 📈 Future Improvements
+
+The next version of this project will include:
+
+- 🔹 Splunk SIEM integration for centralized log analysis.
+- 🔹 Suricata IDS integration for network-based detection.
+- 🔹 Sigma detection rules for reconnaissance and brute-force activity.
+- 🔹 Automated detection scripts using Python.
+- 🔹 Security dashboards for SOC monitoring.
+- 🔹 MITRE ATT&CK Navigator mapping.
+- 🔹 Incident response playbooks for detected attacks.
+
+---
+
+## 💡 SOC Analyst Insight
+
+Effective security monitoring is not limited to detecting successful attacks.
+
+Early detection of reconnaissance, scanning, and repeated authentication failures enables SOC teams to identify malicious activity before a system is compromised.
+
+---
+
+# 📄 Project Report
+
+A detailed report documenting the complete investigation methodology, packet analysis, findings, and conclusions is included in this repository.
+
+📥 **Download the full report:**
+
+- 📄 [SOC-Based Network Attack Detection & Traffic Analysis Report](report/Network_Attack_Detection_Report.pdf)
+
+---
+
+# 📚 Skills Demonstrated
+
+Through this project, the following SOC Analyst skills were practiced and demonstrated:
+
+- Network Traffic Analysis
+- Packet Capture & Inspection
+- Reconnaissance Detection
+- TCP SYN Scan Analysis
+- Service Enumeration Analysis
+- Brute-Force Attack Investigation
+- Wireshark Packet Analysis
+- Nmap Security Assessment
+- Hydra Attack Simulation
+- MITRE ATT&CK Mapping
+- Security Monitoring
+- Incident Investigation
+- Technical Documentation
+
+---
+
+# ⚠️ Disclaimer
+
+This project was developed in a controlled and isolated VMware lab environment for educational and defensive cybersecurity purposes only.
+
+All attack simulations were performed on systems owned by or authorized for testing by the project author. The techniques demonstrated in this repository should never be used against systems without explicit permission.
+
+---
+
+# 👨‍💻 Author
+
+**Dibyanshu Behera**
+
+Aspiring SOC Analyst focused on:
+
+- Blue Team Operations
+- Security Monitoring
+- Threat Detection
+- Digital Forensics
+- Incident Response
+- Splunk SIEM
+- Network Security
+
+If you found this project helpful, consider giving the repository a ⭐.
+
+---
+
+<div align="center">
+
+### 🛡️ Detect Early • Investigate Thoroughly • Defend Continuously
+
+**Built as part of my SOC Analyst Portfolio**
+
+</div>
