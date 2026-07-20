@@ -455,7 +455,7 @@ The following screenshots will be added after completing the repository setup. T
 > *(Add VMware lab topology screenshot here)*
 
 ```markdown
-![Lab Topology](screenshots/lab-topology.png)
+![Lab Environment](screenshots/lab-environment.png)
 ```
 
 ---
@@ -505,7 +505,7 @@ The following screenshots will be added after completing the repository setup. T
 > *(Add packet inspection screenshot here)*
 
 ```markdown
-![Packet Analysis](screenshots/packet-analysis.png)
+![RDP Analysis](screenshots/rdp-analysis.png)
 ```
 
 ---
