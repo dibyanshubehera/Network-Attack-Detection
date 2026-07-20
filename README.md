@@ -452,71 +452,54 @@ The following screenshots will be added after completing the repository setup. T
 
 ## 🖥️ Lab Topology
 
-> *(Add VMware lab topology screenshot here)*
 
-```markdown
+
 ![Lab Environment](screenshots/lab-environment.png)
-```
+
 
 ---
 
 ## 📡 ICMP Host Discovery
 
-> *(Add Wireshark ICMP capture here)*
 
-```markdown
+
 ![ICMP Detection](screenshots/icmp-analysis.png)
-```
+
 
 ---
 
 ## 🌐 TCP SYN Port Scan
 
-> *(Add Wireshark TCP SYN scan capture here)*
 
-```markdown
+
 ![TCP SYN Scan](screenshots/tcp-syn-scan.png)
-```
 
 ---
 
 ## 🔍 Service Enumeration
 
-> *(Add Nmap Service Enumeration screenshot here)*
 
-```markdown
+
 ![Service Enumeration](screenshots/service-enumeration.png)
-```
+
 
 ---
 
 ## 🔐 Hydra Brute Force Attack
 
-> *(Add Hydra terminal screenshot here)*
 
-```markdown
+
 ![Hydra Attack](screenshots/hydra-bruteforce.png)
-```
+
 
 ---
 
 ## 🦈 Wireshark Packet Analysis
 
-> *(Add packet inspection screenshot here)*
 
-```markdown
+
 ![RDP Analysis](screenshots/rdp-analysis.png)
-```
 
----
-
-## 🎯 MITRE ATT&CK Mapping
-
-> *(Optional: Add MITRE ATT&CK mapping diagram here)*
-
-```markdown
-![MITRE Mapping](screenshots/mitre-mapping.png)
-```
 
 ---
 
