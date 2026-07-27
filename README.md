@@ -571,7 +571,7 @@ A detailed report documenting the complete investigation methodology, packet ana
 
 📥 **Download the full report:**
 
-- 📄 [SOC-Based Network Attack Detection & Traffic Analysis Report](report/Network_Attack_Detection_Report.pdf)
+- 📄 [SOC-Based Network Attack Detection & Traffic Analysis Report](https://drive.google.com/file/d/1kplbggJdbSfqYwvfg_pEWlQoLsoYgXUb/view?usp=drivesdk)
 
 ---
 
